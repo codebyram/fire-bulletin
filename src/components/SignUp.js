@@ -20,11 +20,6 @@ class SignUp extends React.Component {
               <Form onSubmit={this.handleSubmit.bind(this)}>
                 <div className="form-body col-12">
                   <TextInput className='col-12 pull-left'
-                   required
-                   name='displayName'
-                   placeholder='Name'
-                   type='text' />
-                  <TextInput className='col-12 pull-left'
                     required
                     name='email'
                     placeholder='Email'
@@ -66,7 +61,7 @@ class SignUp extends React.Component {
   handleSubmit(data){
     if(this.props.isFetching)
       return;
-    // this.props.signUp(data);
+    this.props.signUp(data);
   }
 
   showLogIn(e){
@@ -90,6 +85,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   login: ()=>{dispatch({type: actions.SHOW_LOG_IN, payload: {}})},
+  signUp: (data)=>{dispatch({type: actions.INIT_SIGN_UP,payload: data})}
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

@@ -27,5 +27,19 @@ export default function userReducer(reducerObj){
       user: null,
       showSignUp: true,
     }
-  })
+  });
+
+  reducerObj.registerReducer(actions.INIT_SIGN_UP,(state, payload, controller)=>{
+    controller.signUp(payload)
+    return {
+      fetchingLogin : true
+    }
+  });
+
+  reducerObj.registerReducer(actions.INIT_LOGOUT,(state, payload, controller)=>{
+    controller.logOut();
+    return {
+      fetchingLogout: true
+    }
+  });
 }

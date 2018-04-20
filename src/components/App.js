@@ -10,10 +10,9 @@ import Dashboard from './Dashboard';
 class App extends React.Component {
 
   render(){
-    console.log('rendering: '+this.props.user);
     if(this.props.user) {
       return(
-        <h1>User present</h1>
+        <Dashboard />
       )
     } else if(this.props.showSignUp){
       return (

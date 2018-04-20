@@ -4,7 +4,11 @@ const actions = {
   LOG_IN_SUCCESS : 'LOG_IN_SUCCESS',
   LOG_IN_ERROR : 'LOG_IN_ERROR',
 
-  SHOW_SIGN_UP : 'SHOW_SIGN_UP'
+  SHOW_SIGN_UP : 'SHOW_SIGN_UP',
+  INIT_SIGN_UP : 'INIT_SIGN_UP',
+  SIGN_UP_ERROR : 'SIGN_UP_ERROR',
+
+  INIT_LOGOUT : 'INIT_LOGOUT',
 }
 
 export default actions;
