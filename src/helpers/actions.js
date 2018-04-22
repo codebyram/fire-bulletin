@@ -9,6 +9,10 @@ const actions = {
   SIGN_UP_ERROR : 'SIGN_UP_ERROR',
 
   INIT_LOGOUT : 'INIT_LOGOUT',
+
+  INIT_FETCH : 'INIT_FETCH',
+  POST_FETCH : 'POST_FETCH',
+  NEW_POST : 'NEW_POST'
 }
 
 export default actions;

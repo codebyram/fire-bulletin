@@ -1,5 +1,5 @@
 import firebase from 'firebase/app';
-import firestore from 'firebase/firestore';
+import firestore from 'firebase/database';
 import auth from 'firebase/auth';
 
 export default function initFireBase(options){
@@ -7,6 +7,6 @@ export default function initFireBase(options){
   return {
     app: app,
     auth : app.auth(),
-    store: app.firestore()
+    db: app.database()
   };
 }

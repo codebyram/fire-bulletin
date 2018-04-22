@@ -1,0 +1,40 @@
+.card-list-wrapper {
+  position: relative;
+  float: left;
+  
+  padding: 0;
+  margin: $space-small auto;
+  
+  ul {
+    display: block;
+    list-style: none;
+    
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      position: relative;
+      float: left;
+      list-style: none;
+      
+      width: 100%;
+      overflow: auto;
+    }
+    
+  }
+}
+
+.list-head {
+  position: relative;
+  float: left;
+  
+  padding: $space-small $space-normal;
+  border-radius: $border-radius-s;
+  border: 1px solid $color-border;
+  margin-top: $space-normal;
+  
+  background: $color-white;
+}
+
+@import 'card';

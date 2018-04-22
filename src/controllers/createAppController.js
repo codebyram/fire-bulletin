@@ -1,15 +1,22 @@
 import actions from '../helpers/actions';
+import _ from 'lodash';
 
 export default function createAppController(store,app) {
   let controllers = {}
+  const postRef = app.db.ref('posts');
 
   controllers.logIn = (payload) =>{
     app.auth.onAuthStateChanged(user=>{
+      if(user === null)
+        return;
+      store.dispatch({
+        type: actions.INIT_FETCH,
+        payload: null
+      });
       store.dispatch({
         type: actions.LOG_IN_SUCCESS,
         payload: {
-          email: user.email,
-          name: user.displayName
+          email: user.email
         }
       });
     })
@@ -29,6 +36,8 @@ export default function createAppController(store,app) {
 
   controllers.signUp = payload =>{
     app.auth.onAuthStateChanged(user=>{
+      if(user === null)
+        return;
       store.dispatch({
         type: actions.LOG_IN_SUCCESS,
         payload: {
@@ -43,12 +52,37 @@ export default function createAppController(store,app) {
   }
 
   controllers.post = payload =>{
-
+    postRef.push(payload);
   }
 
   controllers.fetchPosts = payload => {
-
+    postRef.orderByChild('created_at').once('value').then((snapshot) => {
+      let posts = snapshot.val();
+      if(posts) {
+        posts = _.map(posts,(post,key) => {
+          return {
+            ...post,
+            id: key
+          }
+        });
+      }
+      store.dispatch({
+        type: actions.POST_FETCH,
+        payload: _.reverse(posts) || []
+      });
+    });
   }
+
+  postRef.orderByChild('created_at').on('child_added',(data)=>{
+    let payload = {
+      ...data.val(),
+      id: data.key
+    };
+    store.dispatch({
+      type: actions.NEW_POST,
+      payload: payload
+    });
+  });
 
   return controllers;
 

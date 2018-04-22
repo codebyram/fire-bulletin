@@ -1,0 +1,78 @@
+$color-white: #fff;
+$color-black: #1F2D3D;
+$color-steel: #273444;
+$color-slate: #3C4858;
+$color-silver: #8492A6;
+
+$color-border: #E0E6ED;
+$color-border-d: #D3DCE6;
+$color-border-xd: #C0CCDA;
+
+$color-bg: #F9FAFC;
+$color-bg-d: #EFF2F7;
+$color-bg-xd: #E5E9F2;
+
+$color-primary: #1FB6FF;
+$color-primary-l: #85D7FF;
+$color-primary-d: #009EEB;
+
+$color-secondary: #7E5BEF;
+$color-secondary-l: #A389F4;
+$color-secondary-d: #592DEA;
+
+$color-green: #13CE66;
+$color-green-l: #29EB7F;
+$color-green-d: #0F9F4F;
+
+$color-orange: #FF7849;
+$color-orange-l: #FF9E7C;
+$color-orange-d: #FF5216;
+
+$color-yellow: #FFC82C;
+$color-yellow-l: #FFD55F;
+$color-yellow-d: #F8B700;
+  
+$color-success: #13CE66;
+$color-danger: #FF4949;
+$color-warning: #FFC82C;
+
+
+$color-white-translucent: rgba(255,255,255,.1);
+$color-white-translucent-less: rgba(255,255,255,.5);
+$color-black-translucent: rgba(0,0,0,.1);
+$color-black-translucent-less: rgba(0,0,0,.5);
+
+.color-black {color: $color-black !important;}
+.color-steel {color: $color-steel !important;}
+.color-slate {color: $color-slate !important;}
+.color-silver{color: $color-silver !important;}
+
+.color-primary {color: $color-primary !important;}
+.color-primary-l {color: $color-primary-d !important;}
+.color-primary-d {color: $color-primary-d !important;}
+
+.color-secondary {color: $color-secondary !important;}
+.color-secondary-l {color: $color-secondary-l !important;}
+.color-secondary-d {color: $color-secondary-d !important;}
+
+.color-green {color: $color-green !important;}
+.color-green-l {color: $color-green-l !important;}
+.color-green-d {color: $color-green-d !important;}
+
+.color-orange {color: $color-orange !important;}
+.color-orange-l {color: $color-orange-l !important;}
+.color-orange-d {color: $color-orange-d !important;}
+
+.color-yellow {color: $color-yellow !important;}
+.color-yellow-l {color: $color-yellow-l !important;}
+.color-yellow-d {color: $color-yellow-d !important;}
+
+.color-success {color: $color-success !important;}
+.color-danger {color: $color-danger !important;}
+.color-warning {color: $color-warning;}
+
+.bg-fill {background: $color-bg !important}
+.bg-fill-d {background: $color-bg-d !important;}
+.bg-fill-xd {background: $color-bg-xd !important;}
+
+

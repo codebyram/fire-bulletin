@@ -1,0 +1,127 @@
+input,
+input.form-control,
+select,
+textarea {
+  @extend .form-control;
+  border: 1px solid $color-border;
+  color: $color-black;
+  height: $form-input-height;
+  width: 100%;
+  line-height: 1.4;
+  margin: 0 0 $space-one 0;
+  padding: $space-small $space-slab;
+  border-radius: 2px;
+  box-shadow: none;
+  font-size: $font-size-small;
+  font-weight: $font-weight-normal;
+
+  &.input--small {
+    font-size: $font-size-mini;
+    height: $form-input-height--small;
+    padding: $space-smaller $space-slab;
+  }
+  &.input--medium {
+    font-size: $font-size-medium;
+    height: $form-input-height--medium;
+  }
+  &.input--large {
+    font-size: $font-size-big;
+    height: $form-input-height--large;
+  }
+  &.input--bottom_line {
+    border: $zero;
+    border-bottom: 1px solid $color-border;
+    border-radius: $zero;
+    margin-bottom: $zero;
+  }
+}
+
+input[type="submit"] {
+//  @extend .button;
+  width: auto;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: $form-radio-height;
+  height: $form-radio-height;
+}
+
+textarea {
+  height: auto;
+  width: 100%;
+  min-height: 50px;
+}
+
+input:focus,
+textare:focus,
+select:focus {
+  border-color: $color-primary;
+  outline: 0;
+  box-shadow: none;
+}
+
+label {
+  display: block;
+  font-size: $font-size-small;
+  font-weight: $font-weight-normal;
+  margin-bottom: $space-smaller;
+
+  input,
+  select,
+  textarea {
+    margin-top: $space-smaller;
+  }
+}
+.input-group {
+  margin-top: $space-smaller;
+  margin-bottom: $space-one;
+  .input-group-addon {
+    background: $color-bg;
+    border: 1px solid $color-border;
+    color: #34495e;
+    // height: $form-input-height;
+    border-radius: 2px;
+
+    &:first-child {
+      border-right: $zero;
+    }
+    &:last-child {
+      border-left: $zero;
+    }
+  }
+  input,
+  select {
+    margin-top: $zero;
+  }
+}
+.icon-input--left{
+  position: relative;
+  display: block;
+
+  i {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    font-size: $font-size-default;
+    line-height: 40px;
+    padding-left: $space-slab;
+  }
+  input {
+    padding-left:$space-large;
+  }
+}
+
+.checkbox-inline,
+.radio-inline {
+  padding-left: $space-medium;
+  margin-bottom: $space-one;
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-left: -2rem;
+    margin-top: 3px;
+  }
+}

@@ -1,0 +1,71 @@
+/*z-index levels*/
+$zIndex0: 0;
+$zIndex1: 1;
+$zIndex2: 2;
+$zIndex3: 3;
+$zIndex4: 4;
+$zIndex5: 5;
+$zIndex6: 6;
+$zIndex7: 7;
+$zIndex8: 8;
+$zIndex9: 9;
+/*end of z-index*/
+
+$base-font-size: 1.6rem;
+$base-line-height: 1.7;
+$zero: 0;
+
+// Fonts
+$font-lato: 'Lato', sans-serif;
+
+// Font sizes
+$font-size-micro: 1.0rem;
+$font-size-mini: 1.2rem;
+$font-size-small: 1.4rem;
+$font-size-default: 1.6rem;
+$font-size-medium: 1.8rem;
+$font-size-large: 2.0rem;
+$font-size-big: 2.4rem;
+$font-size-bigger: 3.0rem;
+$font-size-mega: 3.4rem;
+
+//Border radius
+$border-radius-s: 3px;
+$border-radius-m: 4px;
+$border-radius-l: 10px;
+
+
+// spaces
+$space-micro: 0.2rem;
+$space-smaller: 0.4rem;
+$space-small: 0.8rem;
+$space-one: 1rem;
+$space-slab: 1.2rem;
+$space-normal: 1.6rem;
+$space-two: 2.0rem;
+$space-medium: 2.4rem;
+$space-large: 3.2rem;
+$space-larger: 4.8rem;
+$space-jumbo: 6.4rem;
+$space-mega: 10.0rem;
+
+
+// font-weight
+$font-weight-feather: 100;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 600;
+$font-weight-black: 800;
+
+// Form
+$form-input-height: 4.0rem;
+$form-input-height--large: 6.4rem;
+$form-input-height--medium: 5.0rem;
+$form-input-height--small: 3.0rem;
+$form-radio-height: 1.6rem;
+
+// Device sizes
+$phone-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$wide-desktop-width: 1240px;

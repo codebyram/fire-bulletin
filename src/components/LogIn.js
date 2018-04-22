@@ -8,6 +8,7 @@ class LogIn extends React.Component {
 
   render(){
     return(
+      <div className="col-12">
         <div className="container">
           <div className='col-xs-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3'>
             <div className="form-box col-12">
@@ -15,39 +16,39 @@ class LogIn extends React.Component {
                 <h2 className="page-sub-title">Log In</h2>
               </div>
               <Form onSubmit={this.handleSubmit.bind(this)}>
-                <div className="form-body">
-                  <TextInput className='col-12 pull-left'
-                   required
-                   name='email'
-                   placeholder='Registered Email'
-                   value=''
-                   type='email' />
-                 <TextInput className='col-12 pull-left'
-                   required
-                   name='password'
-                   placeholder='Password'
-                   value=''
-                   type='password' />
-                </div>
-                <div className="row">
+                <div className="form-body col-12">
+                <TextInput className='col-12 pull-left'
+                 required
+                 name='email'
+                 placeholder='Registered Email'
+                 value=''
+                 type='email' />
+               <TextInput className='col-12 pull-left'
+                 required
+                 name='password'
+                 placeholder='Password'
+                 value=''
+                 type='password' />
                   <div className="col-12 pull-left text-center">
-                    {this.getButton()}
-                    or
-                    <a href="#" onClick={this.showSignUp.bind(this)}>Sign Up</a>
+                  {this.getButton()}
+                  or
+                  <a href="#" onClick={this.showSignUp.bind(this)}>Sign Up</a>
                   </div>
                 </div>
               </Form>
             </div>
           </div>
         </div>
+      </div>
     )
   }
 
   getButton(){
-    if(this.props.isFetching)
+    if (this.props.isFetching) {
       return(
         <button className='button button--xl' type="submit" disabled>Loading</button>
       )
+    }
     return(
       <button className='button button--xl' type="submit" >Log In</button>
     )

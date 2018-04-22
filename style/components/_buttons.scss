@@ -1,0 +1,101 @@
+@mixin buttonColorMixin($baseColor) {
+  background: $baseColor;
+  border-color: darken( $baseColor, 1% );
+  &:hover {
+    background: darken($baseColor, 5%);
+    color: $color-white;
+  }
+}
+
+@mixin outlineButtonColorMixin($baseColor) {
+  color: $baseColor;
+  border-color: lighten( $baseColor, 10% );
+  &:hover,
+  &:focus,
+  &:active {
+    background: $baseColor;
+    color: $color-white;
+  }
+}
+
+.button {
+  @extend .btn;
+  @include buttonColorMixin($color-primary-d);
+  color: $color-white;
+  border-radius: $border-radius-m;
+
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $color-white;
+    box-shadow: none;
+  }
+  &.button--success {
+    @include buttonColorMixin($color-green-d);
+  }
+
+  &.button--warning {
+    @include buttonColorMixin($color-warning);
+  }
+
+  &.button--danger {
+    @include buttonColorMixin($color-danger);
+  }
+
+  &.button--default {
+    @include buttonColorMixin($color-silver);
+  }
+
+  &.button--secondary {
+    @include buttonColorMixin($color-secondary);
+  }
+
+  &.button--orange {
+    @include buttonColorMixin($color-orange);
+  }
+}
+
+.button--outline {
+  @extend .btn;
+  background: transparent;
+  @include outlineButtonColorMixin($color-primary-d);
+  border-radius: 0;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $color-white;
+    box-shadow: none;
+  }
+
+  &.button--default {
+    @include outlineButtonColorMixin($color-silver);
+  }
+
+  &.button--success {
+    @include outlineButtonColorMixin($color-green-d);
+  }
+
+  &.button--warning {
+    @include outlineButtonColorMixin($color-warning);
+  }
+
+  &.button--secondary {
+    @include outlineButtonColorMixin($color-secondary);
+  }
+
+  &.button--orange {
+    @include outlineButtonColorMixin($color-orange);
+  }
+
+}
+
+.button--inline { display: inline-block;}
+
+.button--rounded {
+  border-radius: $border-radius-m;
+}

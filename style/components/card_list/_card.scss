@@ -1,0 +1,58 @@
+.job-card {
+  position: relative;
+  float: left;
+  
+  width: 100%;
+  min-height: 120px;
+  margin: $space-small auto;
+  padding: $space-small $space-normal;
+  border-radius: $border-radius-s;
+  border: 1px solid $color-border;
+  
+  background: $color-white;
+  
+  .job-details {
+    position: relative;
+    float: right;
+    
+    width: calc(100% - 96px);
+   
+    a h3 {
+      margin-top: $space-one !important;
+    }
+    
+    span.job-tag {
+      display: inline-block;
+      
+      margin-right: $space-small;
+      padding: 0 $space-small;
+      border: 1px solid $color-secondary;
+      border-radius: $border-radius-l;
+      
+      font-weight: $font-weight-normal;
+      font-size: $font-size-mini;
+      
+      color: $color-secondary;
+      cursor: pointer;
+      
+      transition: all .2s linear;
+      
+      &:hover {
+        background: $color-secondary;
+        color: $color-white;
+      }
+    }
+  }
+  
+  .com-pic {
+    position: relative;
+    float: left;
+    
+    width: 80px;
+    height: 80px;
+    margin-top: $space-slab;
+    
+    background: $color-bg-d;
+  }
+  
+}

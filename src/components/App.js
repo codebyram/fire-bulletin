@@ -12,7 +12,7 @@ class App extends React.Component {
   render(){
     if(this.props.user) {
       return(
-        <Dashboard />
+        <Dashboard controller={this.props.controller}/>
       )
     } else if(this.props.showSignUp){
       return (
