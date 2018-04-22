@@ -8,7 +8,9 @@ class PostList extends React.Component {
   render() {
     if (this.props.fetchingPosts) {
       return (
-        <h3 className="text-center">Loading ... </h3>
+        <div className="card-list-wrapper col-xs-12 col-md-8">
+          <h3 className="text-center">Loading ... </h3>
+        </div>
       )
     } else {
       return (
@@ -42,7 +44,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostList);

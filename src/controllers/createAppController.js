@@ -6,20 +6,7 @@ export default function createAppController(store,app) {
   const postRef = app.db.ref('posts');
 
   controllers.logIn = (payload) =>{
-    app.auth.onAuthStateChanged(user=>{
-      if(user === null)
-        return;
-      store.dispatch({
-        type: actions.INIT_FETCH,
-        payload: null
-      });
-      store.dispatch({
-        type: actions.LOG_IN_SUCCESS,
-        payload: {
-          email: user.email
-        }
-      });
-    })
+
     app.auth.signInWithEmailAndPassword(payload.email, payload.password).catch(error=>{
       console.log(error);
     });
@@ -87,6 +74,21 @@ export default function createAppController(store,app) {
       payload: payload
     });
   });
+
+  app.auth.onAuthStateChanged(user=>{
+    if(user === null)
+      return;
+    store.dispatch({
+      type: actions.INIT_FETCH,
+      payload: null
+    });
+    store.dispatch({
+      type: actions.LOG_IN_SUCCESS,
+      payload: {
+        email: user.email
+      }
+    });
+  })
 
   postRef.orderByChild('created_at').on('child_removed',(data)=>{
     store.dispatch({
