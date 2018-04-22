@@ -12,7 +12,8 @@ const actions = {
 
   INIT_FETCH : 'INIT_FETCH',
   POST_FETCH : 'POST_FETCH',
-  NEW_POST : 'NEW_POST'
+  NEW_POST : 'NEW_POST',
+  DELETE_POST : 'DELETE_POST'
 }
 
 export default actions;

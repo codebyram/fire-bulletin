@@ -8,8 +8,17 @@ export default class Post extends React.Component {
           <h3 className="block-title">{this.props.title}</h3>
           <h5 className="text-block-title">By - {this.props.by} </h5>
           <p>{this.props.description}</p>
+          {this.renderDelete()}
         </div>
       </div>
     )
+  }
+
+  renderDelete(){
+    if (this.props.canDelete) {
+      return(
+        <button className="button button--danger float-right" onClick={()=>{this.props.delete(this.props.id)}}>DELETE</button>
+      )
+    }
   }
 }

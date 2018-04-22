@@ -73,6 +73,10 @@ export default function createAppController(store,app) {
     });
   }
 
+  controllers.delete = key => {
+    app.db.ref('posts/'+key).remove();
+  }
+
   postRef.orderByChild('created_at').on('child_added',(data)=>{
     let payload = {
       ...data.val(),
@@ -81,6 +85,13 @@ export default function createAppController(store,app) {
     store.dispatch({
       type: actions.NEW_POST,
       payload: payload
+    });
+  });
+
+  postRef.orderByChild('created_at').on('child_removed',(data)=>{
+    store.dispatch({
+      type: actions.DELETE_POST,
+      payload: data.key
     });
   });
 

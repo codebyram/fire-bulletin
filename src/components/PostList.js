@@ -15,9 +15,12 @@ class PostList extends React.Component {
           <div className="card-list-wrapper col-xs-12 col-md-8">
             <ul>
             {this.props.posts.map((post) => {
+              if(this.props.user === post.by) {
+                post = { ...post, canDelete : true, delete: this.props.delete };
+              }
               return(
                 <li key={post.id}>
-                  <Post {...post} />
+                  <Post {...post}/>
                 </li>
               )
             })}
@@ -39,7 +42,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  delete: (payload)=>{dispatch({type: actions.INIT_DELETE, payload: payload})},
+  
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostList);

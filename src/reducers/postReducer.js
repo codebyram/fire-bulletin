@@ -1,4 +1,5 @@
 import actions from '../helpers/actions';
+import _ from 'lodash';
 
 export default function postReducer(reducerObj){
 
@@ -26,6 +27,16 @@ export default function postReducer(reducerObj){
         ...state.posts
       ],
       fetchingPosts: false
+    }
+  })
+
+  reducerObj.registerReducer(actions.DELETE_POST, (state,payload,controller)=>{
+    var posts = _.filter(state.posts,(p)=>{
+      return p.id !== payload;
+    });
+    return {
+      ...state,
+      posts: posts
     }
   })
 

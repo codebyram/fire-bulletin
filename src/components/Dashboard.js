@@ -19,7 +19,7 @@ class Dashboard extends React.Component {
             <button className='button button--danger button--xl float-right' onClick={this.logOut.bind(this)} >Log Out</button>
             <button className='button button--xl' onClick={this.showPostForm.bind(this)} >Post</button>
           </div>
-          <PostList />
+          <PostList delete={this.deletePost.bind(this)}/>
         </div>
       </div>
     )
@@ -46,6 +46,10 @@ class Dashboard extends React.Component {
       created_at: new Date().getTime()
     });
     this.closePostForm();
+  }
+
+  deletePost(key){
+    this.props.controller.delete(key);
   }
 
   closePostForm(){
