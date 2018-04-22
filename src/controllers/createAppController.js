@@ -64,16 +64,25 @@ export default function createAppController(store,app) {
     app.db.ref('posts/'+key).remove();
   }
 
-  postRef.orderByChild('created_at').on('child_added',(data)=>{
-    let payload = {
-      ...data.val(),
-      id: data.key
-    };
-    store.dispatch({
-      type: actions.NEW_POST,
-      payload: payload
+  controllers.bindPostListener = () => {
+    postRef.orderByChild('created_at').on('child_added',(data)=>{
+      let payload = {
+        ...data.val(),
+        id: data.key
+      };
+      store.dispatch({
+        type: actions.NEW_POST,
+        payload: payload
+      });
     });
-  });
+
+    postRef.orderByChild('created_at').on('child_removed',(data)=>{
+      store.dispatch({
+        type: actions.DELETE_POST,
+        payload: data.key
+      });
+    });
+  }
 
   app.auth.onAuthStateChanged(user=>{
     if(user === null)
@@ -89,13 +98,6 @@ export default function createAppController(store,app) {
       }
     });
   })
-
-  postRef.orderByChild('created_at').on('child_removed',(data)=>{
-    store.dispatch({
-      type: actions.DELETE_POST,
-      payload: data.key
-    });
-  });
 
   return controllers;
 

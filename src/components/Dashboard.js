@@ -7,6 +7,7 @@ import PostList from './PostList';
 
 class Dashboard extends React.Component {
   componentWillMount(){
+    this.props.controller.bindPostListener();
     this.setState({showForm : false});
   }
 
